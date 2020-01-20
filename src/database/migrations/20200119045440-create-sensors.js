@@ -2,9 +2,14 @@ module.exports = {
   up: (queryInterface, Sequelize) => {
     return queryInterface.createTable('sensors', {
       id: {
-        type: Sequelize.STRING,
-        autoIncrement: false,
+        type: Sequelize.INTEGER,
+        autoIncrement: true,
         primaryKey: true,
+        allowNull: false,
+      },
+      sensor_id: {
+        type: Sequelize.STRING,
+        unique: true,
         allowNull: false,
       },
       name: {

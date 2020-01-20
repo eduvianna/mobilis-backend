@@ -9,7 +9,7 @@ module.exports = {
       },
       sensor_id: {
         type: Sequelize.STRING,
-        references: { model: 'sensors', key: 'id' },
+        references: { model: 'sensors', key: 'sensor_id' },
         onUpdate: 'CASCADE',
         onDelete: 'SET NULL',
       },
