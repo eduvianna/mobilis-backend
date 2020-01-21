@@ -3,6 +3,14 @@ import * as Yup from 'yup';
 import Word from '../models/Word';
 
 class WordController {
+  async index(req, res) {
+    const { sensor_id } = req.query;
+
+    const words = await Word.findAll({ where: { sensor_id } });
+
+    return res.json({ words });
+  }
+
   async store(req, res) {
     const schema = Yup.object().shape({
       sensor_id: Yup.string().required(),
@@ -41,7 +49,7 @@ class WordController {
       return res.status(401).json({ error: 'Informações Invalidas' });
     }
     const checkWord = await Word.findOne({
-      where: { sensor_id: req.body.sensor_id, word: req.body.word },
+      where: { sensor_id: req.body.sensor_id, word: req.body.oldWord },
     });
 
     if (!checkWord) {

@@ -3,6 +3,12 @@ import * as Yup from 'yup';
 import Sensor from '../models/Sensor';
 
 class SensorController {
+  async index(req, res) {
+    const sensors = await Sensor.findAll();
+
+    return res.json({ sensors });
+  }
+
   async store(req, res) {
     const schema = Yup.object().shape({
       sensor_id: Yup.string().required(),
@@ -15,6 +21,15 @@ class SensorController {
       return res.status(401).json({ error: 'Informações invalidas' });
     }
 
+    const sensorExists = await Sensor.findOne({
+      where: { sensor_id: req.body.sensor_id },
+    });
+
+    if (sensorExists) {
+      return res
+        .status(401)
+        .json({ error: 'Sensor já cadastrado anteriormente' });
+    }
     const { sensor_id, name, description, type } = await Sensor.create(
       req.body
     );
