@@ -8,7 +8,6 @@ class Sensor extends Model {
         name: Sequelize.STRING,
         description: Sequelize.STRING,
         type: Sequelize.STRING,
-        word: Sequelize.INTEGER,
       },
       {
         sequelize,

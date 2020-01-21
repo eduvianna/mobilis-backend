@@ -3,8 +3,9 @@ import Sequelize from 'sequelize';
 import databaseConfig from '../config/database';
 import Sensor from '../app/models/Sensor';
 import Measurement from '../app/models/Measurement';
+import Word from '../app/models/Word';
 
-const models = [Sensor, Measurement];
+const models = [Sensor, Measurement, Word];
 
 class Database {
   constructor() {
