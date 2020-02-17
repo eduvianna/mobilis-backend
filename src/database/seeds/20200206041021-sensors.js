@@ -4,7 +4,7 @@ module.exports = {
       'sensors',
       [
         {
-          sensor_id: '0xCF00002',
+          sensor_id: '0xcf00002',
           name: 'Velocidades',
           description: 'Velocidades',
           type: 'Velocidades',
@@ -12,7 +12,7 @@ module.exports = {
           updated_at: new Date(),
         },
         {
-          sensor_id: '0xCF10002',
+          sensor_id: '0xcf10002',
           name: 'Hôdometro Parcial',
           description: 'Hôdometro Parcial',
           type: 'Hôdometro Parcial',
@@ -20,7 +20,7 @@ module.exports = {
           updated_at: new Date(),
         },
         {
-          sensor_id: '0xCF20002',
+          sensor_id: '0xcf20002',
           name: 'Referências',
           description: 'Referências',
           type: 'Referências',
@@ -28,7 +28,7 @@ module.exports = {
           updated_at: new Date(),
         },
         {
-          sensor_id: '0xCF30002',
+          sensor_id: '0xcf30002',
           name: 'Temperaturas',
           description: 'Temperaturas',
           type: 'Temperaturas',
@@ -36,7 +36,7 @@ module.exports = {
           updated_at: new Date(),
         },
         {
-          sensor_id: '0xCF40002',
+          sensor_id: '0xcf40002',
           name: 'Correntes e Tensões',
           description: 'Correntes e Tensões',
           type: 'Correntes e Tensões',
@@ -44,7 +44,7 @@ module.exports = {
           updated_at: new Date(),
         },
         {
-          sensor_id: '0xCF50002',
+          sensor_id: '0xcf50002',
           name: 'Vetorial',
           description: 'Vetorial',
           type: 'Vetorial',
@@ -52,7 +52,7 @@ module.exports = {
           updated_at: new Date(),
         },
         {
-          sensor_id: '0xCF60002',
+          sensor_id: '0xcf60002',
           name: 'Vetorial - Ganhos',
           description: 'Vetorial - Ganhos',
           type: 'Vetorial - Ganhos',
@@ -60,7 +60,7 @@ module.exports = {
           updated_at: new Date(),
         },
         {
-          sensor_id: '0xCF70002',
+          sensor_id: '0xcf70002',
           name: 'Vetorial - Ganhos 2',
           description: 'Vetorial - Ganhos 2',
           type: 'Vetorial - Ganhos 2',
@@ -68,7 +68,7 @@ module.exports = {
           updated_at: new Date(),
         },
         {
-          sensor_id: '0xCF80002',
+          sensor_id: '0xcf80002',
           name: 'Falha e Alarmes WEG',
           description: 'Falha e Alarmes WEG',
           type: 'Falha e Alarmes WEG',
@@ -76,7 +76,7 @@ module.exports = {
           updated_at: new Date(),
         },
         {
-          sensor_id: '0x186555F4',
+          sensor_id: '0x186555f4',
           name: 'Tensão Total e SoC',
           description: 'Tensão Total e SoC',
           type: 'Tensão Total e SoC',
@@ -84,7 +84,7 @@ module.exports = {
           updated_at: new Date(),
         },
         {
-          sensor_id: '0x186655F4',
+          sensor_id: '0x186655f4',
           name: 'Temperaturas',
           description: 'Temperaturas',
           type: 'Temperaturas',
@@ -92,7 +92,7 @@ module.exports = {
           updated_at: new Date(),
         },
         {
-          sensor_id: '0x186955F4',
+          sensor_id: '0x186955f4',
           name: 'Max/Min Temperatura',
           description: 'Max/Min Temperatura',
           type: 'Max/Min Temperatura',
@@ -100,7 +100,7 @@ module.exports = {
           updated_at: new Date(),
         },
         {
-          sensor_id: '0x186A55F4',
+          sensor_id: '0x186a55f4',
           name: 'Tensões Extremas',
           description: 'Tensões Extremas',
           type: 'Tensões Extremas',
@@ -108,7 +108,7 @@ module.exports = {
           updated_at: new Date(),
         },
         {
-          sensor_id: '0x186B55F4',
+          sensor_id: '0x186b55f4',
           name: 'Tensões Células',
           description: 'Tensões Células',
           type: 'Tensões Células',
@@ -116,7 +116,7 @@ module.exports = {
           updated_at: new Date(),
         },
         {
-          sensor_id: '0x186C55F4',
+          sensor_id: '0x186c55f4',
           name: 'Temperatura Celulas',
           description: 'Temperatura Celulas',
           type: 'Temperatura Celulas',
@@ -124,7 +124,7 @@ module.exports = {
           updated_at: new Date(),
         },
         {
-          sensor_id: '0x186D55F4',
+          sensor_id: '0x186d55f4',
           name: 'Temperatura Celulas',
           description: 'Temperatura Celulas',
           type: 'Temperatura Celulas',
@@ -132,7 +132,7 @@ module.exports = {
           updated_at: new Date(),
         },
         {
-          sensor_id: '0x186E55F4',
+          sensor_id: '0x186e55f4',
           name: 'Temperatura Celulas',
           description: 'Temperatura Celulas',
           type: 'Temperatura Celulas',
@@ -140,7 +140,7 @@ module.exports = {
           updated_at: new Date(),
         },
         {
-          sensor_id: '0x10F00001',
+          sensor_id: '0x10f00001',
           name: 'Hôdometro Total',
           description: 'Hôdometro Total',
           type: 'Hôdometro Total',
@@ -148,7 +148,7 @@ module.exports = {
           updated_at: new Date(),
         },
         {
-          sensor_id: '0x0CF30003',
+          sensor_id: '0xcf30003',
           name: 'Carro Status',
           description: 'Carro Status',
           type: 'Carro Status',
@@ -156,7 +156,7 @@ module.exports = {
           updated_at: new Date(),
         },
         {
-          sensor_id: '0x0CF40003',
+          sensor_id: '0xcf40003',
           name: 'Temperatura Check',
           description: 'Temperatura Check',
           type: 'Temperatura Check',
