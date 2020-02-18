@@ -148,7 +148,7 @@ module.exports = {
           updated_at: new Date(),
         },
         {
-          sensor_id: '0xcf30003',
+          sensor_id: '0x0cf30003',
           name: 'Carro Status',
           description: 'Carro Status',
           type: 'Carro Status',
@@ -156,7 +156,7 @@ module.exports = {
           updated_at: new Date(),
         },
         {
-          sensor_id: '0xcf40003',
+          sensor_id: '0x0cf40003',
           name: 'Temperatura Check',
           description: 'Temperatura Check',
           type: 'Temperatura Check',
