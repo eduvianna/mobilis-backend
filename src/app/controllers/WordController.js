@@ -8,7 +8,7 @@ class WordController {
 
     const words = await Word.findAll({ where: { sensor_id } });
 
-    return res.json({ words });
+    return res.json(words);
   }
 
   async store(req, res) {

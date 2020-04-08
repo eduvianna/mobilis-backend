@@ -6,7 +6,7 @@ class SensorController {
   async index(req, res) {
     const sensors = await Sensor.findAll();
 
-    return res.json({ sensors });
+    return res.json(sensors);
   }
 
   async store(req, res) {
@@ -34,7 +34,12 @@ class SensorController {
       req.body
     );
 
-    return res.json({ sensor_id, name, description, type });
+    return res.json({
+      sensor_id,
+      name,
+      description,
+      type,
+    });
   }
 
   async update(req, res) {
