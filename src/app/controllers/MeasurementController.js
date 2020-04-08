@@ -2,6 +2,7 @@ import * as Yup from 'yup';
 
 import Measurement from '../models/Measurement';
 import Sensor from '../models/Sensor';
+import Word from '../models/Word';
 
 class MeasurementController {
   async index(req, res) {
@@ -12,11 +13,17 @@ class MeasurementController {
       order: [['created_at', 'DESC']],
     });
 
-    const { name, type } = await Sensor.findOne({
+    const searchSensor = await Sensor.findOne({
       where: { sensor_id },
       attributes: ['name', 'type'],
     });
-    return res.json({ measurements, name, type });
+
+    const searchWord = await Word.findOne({
+      where: { sensor_id },
+      attributes: ['name', 'alarm'],
+    });
+
+    return res.json({ measurements, sensor: searchSensor, word: searchWord });
   }
 
   async store(req, res) {

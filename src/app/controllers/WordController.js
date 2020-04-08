@@ -4,9 +4,9 @@ import Word from '../models/Word';
 
 class WordController {
   async index(req, res) {
-    const { sensor_id } = req.query;
+    const { sensor_id, alarm = false } = req.query;
 
-    const words = await Word.findAll({ where: { sensor_id } });
+    const words = await Word.findAll({ where: { sensor_id, alarm } });
 
     return res.json(words);
   }
@@ -15,6 +15,8 @@ class WordController {
     const schema = Yup.object().shape({
       sensor_id: Yup.string().required(),
       word: Yup.number().required(),
+      name: Yup.string().required(),
+      alarm: Yup.boolean().required(),
     });
 
     if (!(await schema.isValid(req.body))) {
@@ -31,9 +33,9 @@ class WordController {
         .json({ error: 'Palavra já registrada para este sensor' });
     }
 
-    const { sensor_id, word } = await Word.create(req.body);
+    const { sensor_id, word, name, alarm } = await Word.create(req.body);
 
-    return res.json({ sensor_id, word });
+    return res.json({ sensor_id, word, name, alarm });
   }
 
   async update(req, res) {
@@ -43,6 +45,8 @@ class WordController {
       word: Yup.number().when('oldWord', (oldWord, field) =>
         oldWord ? field.required() : field
       ),
+      name: Yup.string(),
+      alarm: Yup.boolean(),
     });
 
     if (!(await schema.isValid(req.body))) {
@@ -64,11 +68,11 @@ class WordController {
 
     await checkWord.update(req.body);
 
-    const { sensor_id, word } = await Word.findOne({
+    const { sensor_id, word, name, alarm } = await Word.findOne({
       where: { sensor_id: req.body.sensor_id, word: req.body.word },
     });
 
-    return res.json({ sensor_id, word });
+    return res.json({ sensor_id, word, name, alarm });
   }
 }
 

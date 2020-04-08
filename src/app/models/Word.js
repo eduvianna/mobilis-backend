@@ -6,6 +6,8 @@ class Word extends Model {
       {
         sensor_id: Sequelize.STRING,
         word: Sequelize.INTEGER,
+        name: Sequelize.STRING,
+        alarm: Sequelize.BOOLEAN,
       },
       {
         sequelize,
