@@ -23,6 +23,7 @@ services:
     volumes:
       - '.:/usr/app'
     container_name: 'app-mobilis'
+    restart: always
     command: yarn dev
 
   python-server:
