@@ -1,3 +1,3 @@
 FROM python:2.7
 
-RUN pip install requests serial
+RUN pip install requests pyserial
