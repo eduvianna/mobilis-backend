@@ -1,10 +1,22 @@
 import * as Yup from 'yup';
 
 import Sensor from '../models/Sensor';
+import Word from '../models/Word';
 
 class SensorController {
   async index(req, res) {
-    const sensors = await Sensor.findAll();
+    const { alarm = false } = req.query;
+
+    const sensors = await Sensor.findAll({
+      include: [
+        {
+          model: Word,
+          as: 'words',
+          attributes: ['word', 'name', 'alarm'],
+          where: { alarm },
+        },
+      ],
+    });
 
     return res.json(sensors);
   }

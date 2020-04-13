@@ -17,10 +17,6 @@ class Word extends Model {
 
     return this;
   }
-
-  static associate(model) {
-    this.hasMany(model.Sensor, { foreignKey: 'sensor_id', as: 'sensor' });
-  }
 }
 
 export default Word;

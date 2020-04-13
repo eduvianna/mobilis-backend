@@ -17,6 +17,14 @@ class Sensor extends Model {
 
     return this;
   }
+
+  static associate(model) {
+    this.hasMany(model.Word, {
+      foreignKey: 'sensor_id',
+      sourceKey: 'sensor_id',
+      as: 'words',
+    });
+  }
 }
 
 export default Sensor;
