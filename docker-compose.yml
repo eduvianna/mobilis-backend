@@ -1,4 +1,4 @@
-version: '3'
+version: '3.7'
 
 services:
   postgres:
@@ -13,6 +13,8 @@ services:
     volumes:
       - postgres_data:/var/lib/postgresql/data
     restart: always
+    networks:
+      - teste
 
   app:
     build: .
@@ -24,16 +26,24 @@ services:
       - '.:/usr/app'
     container_name: 'app-mobilis'
     command: yarn dev
+    networks:
+      - teste
 
   python-server:
     build: .docker/python-server
     working_dir: /home/server
     container_name: 'mobilis-python-server'
-    usb_path: /dev/ttyACM0
     image: python-server
     volumes:
       - ./server:/home/server
     command: ['python', 'server.py']
     restart: always
+    networks:
+      - teste
+
 volumes:
   postgres_data:
+
+networks:
+  teste:
+    name: teste
