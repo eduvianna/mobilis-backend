@@ -29,6 +29,7 @@ services:
     build: .docker/python-server
     working_dir: /home/server
     container_name: 'mobilis-python-server'
+
     privileged: true
     devices:
       - '/dev:/dev'
@@ -37,5 +38,6 @@ services:
       - ./server:/home/server
     command: ['python', 'server.py']
     restart: always
+
 volumes:
   postgres_data:
