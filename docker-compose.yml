@@ -25,6 +25,7 @@ services:
     volumes:
       - '.:/usr/app'
     container_name: 'app-mobilis'
+    restart: always
     command: yarn dev
     networks:
       - teste
@@ -33,13 +34,23 @@ services:
     build: .docker/python-server
     working_dir: /home/server
     container_name: 'mobilis-python-server'
+<<<<<<< HEAD
+=======
+
+    privileged: true
+    devices:
+      - '/dev:/dev'
+>>>>>>> c4ca75581f65e6570afffe9b6320f6469f5ad615
     image: python-server
     volumes:
       - ./server:/home/server
     command: ['python', 'server.py']
     restart: always
+<<<<<<< HEAD
     networks:
       - teste
+=======
+>>>>>>> c4ca75581f65e6570afffe9b6320f6469f5ad615
 
 volumes:
   postgres_data:
