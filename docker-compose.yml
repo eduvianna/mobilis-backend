@@ -35,6 +35,9 @@ services:
     working_dir: /home/server
     container_name: 'mobilis-python-server'
     image: python-server
+    privileged: true
+    devices:
+      - '/dev:/dev'
     volumes:
       - ./server:/home/server
     command: ['python', 'server.py']
