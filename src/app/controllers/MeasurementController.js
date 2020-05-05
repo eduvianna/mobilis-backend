@@ -89,6 +89,22 @@ class MeasurementController {
       return res.status(401).json({ error: 'Informações Invalidas' });
     }
 
+    const checkSensor = await Sensor.findOne({
+      where: { sensor_id: req.body.sensor_id },
+    });
+
+    const checkWord = await Word.findOne({
+      where: { sensor_id: req.body.sensor_id, word: req.body.word },
+    });
+
+    if (!checkSensor) {
+      return res.status(400).json({ error: 'Sensor não existe' });
+    }
+
+    if (!checkWord) {
+      return res.status(400).json({ error: 'Palavra não existe' });
+    }
+
     const { sensor_id, word, value } = await Measurement.create(req.body);
 
     return res.json({ sensor_id, word, value });
