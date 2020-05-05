@@ -1,5 +1,5 @@
 import requests
-import serial
+import serial,time
 import serial.tools.list_ports
 
 
@@ -12,11 +12,12 @@ while True:
         port[0] = port[0].strip()
         if 'ttyACM' in port[1]:
 
-          ser = serial.Serial(port[0], 9600)
-
+          ser = serial.Serial(port[0], 115200, timeout=.1)
+          time.sleep(1)
           read_serial = ser.readline()
-
+          print read_serial
           message = read_serial.split(':')
+
 
           if len(message) == 3:
               try:
